@@ -1,8 +1,8 @@
 package = "LuaSec"
-version = "0.6-1"
+version = "0.7alpha-1"
 source = {
    url = "git://github.com/brunoos/luasec.git",
-   tag = "luasec-0.6"
+   tag = "luasec-0.7alpha"
 }
 description = {
    summary = "A binding for OpenSSL library to provide TLS/SSL communication over LuaSocket.",
@@ -55,8 +55,8 @@ build = {
                   "ssl", "crypto"
                },
                sources = {
-                  "src/ec.c", "src/config.c",
-                  "src/x509.c", "src/context.c", "src/ssl.c",
+                  "src/config.c", "src/ec.c", 
+                  "src/x509.c", "src/context.c", "src/ssl.c", 
                   "src/luasocket/buffer.c", "src/luasocket/io.c",
                   "src/luasocket/timeout.c", "src/luasocket/usocket.c"
                }
@@ -83,13 +83,13 @@ build = {
                   "$(OPENSSL_BINDIR)",
                },
                libraries = {
-                  "libeay32", "ssleay32", "ws2_32"
+                  "libssl32MD", "libcrypto32MD", "ws2_32"
                },
                incdirs = {
                   "$(OPENSSL_INCDIR)", "src/", "src/luasocket"
                },
                sources = {
-                  "src/ec.c", "src/config.c",
+                  "src/config.c", "src/ec.c", 
                   "src/x509.c", "src/context.c", "src/ssl.c", 
                   "src/luasocket/buffer.c", "src/luasocket/io.c",
                   "src/luasocket/timeout.c", "src/luasocket/wsocket.c"
